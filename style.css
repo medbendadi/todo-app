@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: #dfdfe5;
+  font-family: "Josefin Sans", sans-serif;
+  /* background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.container {
+  width: 500px;
+}
+
+.container header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  letter-spacing: 10px;
+}
+
+header button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+}
+
+.task-content {
+  background-color: hsl(235, 24%, 19%);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 5px 16px;
+  margin: 2rem 0 1rem;
+}
+.check {
+  height: 25px;
+  background-color: transparent;
+  width: 25px;
+  /* margin: 0 1rem; */
+  border-radius: 50%;
+  border: 2px solid hsl(234, 11%, 52%);
+}
+.task-content input[type="text"] {
+  width: 91%;
+  margin-left: 1rem;
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.date_toggle {
+  display: inline-block;
+  position: relative;
+  width: 18px;
+  height: 19px;
+}
+
+.date-toggle-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+#send {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+#send:hover {
+  color: hsl(234, 11%, 52%);
+}
+
+.datepicker-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.datepicker-input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.tasks-container {
+  background-color: hsl(235, 24%, 19%);
+  color: #fff;
+  border-radius: 5px;
+  /* overflow: hidden; */
+  padding: 0px;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-direction: column; */
+}
+.task {
+  position: relative;
+  font-size: 15px;
+  display: flex;
+  padding: 15px 16px;
+  /* margin: 40px 0; */
+  /* align-items: center; */
+  /* border-top: 1px solid hsl(234, 11%, 52%); */
+  border-bottom: 1px solid hsl(234, 11%, 52%);
+
+  align-items: center;
+}
+.task .check {
+  outline: none;
+  margin-right: 16px;
+  cursor: pointer;
+}
+.task .check i {
+  display: none;
+}
+.task.active .check {
+  background: linear-gradient(
+    341deg,
+    rgba(192, 88, 240, 1) 0%,
+    rgba(87, 221, 255, 1) 100%
+  );
+  border: none;
+  color: #fff;
+}
+.task.active .task-text {
+  text-decoration: line-through !important;
+}
+.task.active .check i {
+  display: initial;
+  font-size: 12px;
+}
+.task .task-text {
+  width: 350px;
+}
+.task .time {
+  position: absolute;
+  right: 0;
+  bottom: 0%;
+  padding: 5px;
+  font-size: 11px;
+}
+
+ul {
+  list-style: none;
+}
+
+.tasks-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.tasks-info .lists ul {
+  display: flex;
+}
+.tasks-info .lists li {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.tasks-info h4 {
+  cursor: pointer;
+}
+
+.complet.active-list,
+.complet:hover {
+  color: chartreuse !important;
+}
+.active.active-list,
+.lists .active:hover {
+  color: gold !important;
+}
+.all.active-list,
+.all:hover {
+  color: dodgerblue !important;
+}
+
+.tasks-info .lists li:hover,
+.tasks-info h4:hover {
+  color: hsl(220, 98%, 61%);
+}
